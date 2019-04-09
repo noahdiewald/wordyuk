@@ -1,0 +1,34 @@
+<h1>Listing Pmitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Auc item</th>
+      <th>Esp glss</th>
+      <th>Que gloss</th>
+      <th>Reference</th>
+      <th>Pos</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pm_item <- @pmitems do %>
+    <tr>
+      <td><%= pm_item.auc_item %></td>
+      <td><%= pm_item.esp_gloss %></td>
+      <td><%= pm_item.que_gloss %></td>
+      <td><%= pm_item.reference %></td>
+      <td><%= pm_item.pos %></td>
+
+      <td>
+        <%= link "Show", to: Routes.pm_item_path(@conn, :show, pm_item) %>
+        <%= link "Edit", to: Routes.pm_item_path(@conn, :edit, pm_item) %>
+        <%= link "Delete", to: Routes.pm_item_path(@conn, :delete, pm_item), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Pm item", to: Routes.pm_item_path(@conn, :new) %></span>

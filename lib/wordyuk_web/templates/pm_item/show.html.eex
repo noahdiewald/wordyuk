@@ -1,0 +1,33 @@
+<h1>Show Pm item</h1>
+
+<ul>
+
+  <li>
+    <strong>Auc item:</strong>
+    <%= @pm_item.auc_item %>
+  </li>
+
+  <li>
+    <strong>Esp gloss:</strong>
+    <%= @pm_item.esp_gloss %>
+  </li>
+
+  <li>
+    <strong>Que gloss:</strong>
+    <%= @pm_item.que_gloss %>
+  </li>
+
+  <li>
+    <strong>Reference:</strong>
+    <%= @pm_item.reference %>
+  </li>
+
+  <li>
+    <strong>Pos:</strong>
+    <%= @pm_item.pos %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pm_item_path(@conn, :edit, @pm_item) %></span>
+<span><%= link "Back", to: Routes.pm_item_path(@conn, :index) %></span>

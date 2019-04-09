@@ -1,0 +1,5 @@
+<h1>Edit Pm item</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.pm_item_path(@conn, :update, @pm_item)) %>
+
+<span><%= link "Back", to: Routes.pm_item_path(@conn, :index) %></span>
